@@ -1,0 +1,110 @@
+<div *ngIf="showStatus" class="mt-5 text-center">
+  Currently Inventory Not available, please add.<br>
+  <a class="btn btn-primary mr-3 mt-2" routerLink="/add-edit-inventory">Add Inventory</a>
+  <a class="btn btn-primary mt-2" routerLink="/home">Go Back</a>
+</div>
+<div *ngIf="!showStatus" class="container">
+  <h2 class="mt-5 pb-3">Inventory</h2>
+  <table class="table table-striped pb-3">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Cost</th>
+        <th>Quantity</th>
+        <th>Unit</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of inventory">
+        <td (click)="editInventory(data.id)">{{ data.MaterialName }}</td>
+        <td (click)="editInventory(data.id)">{{ data.cost }}</td>
+        <td (click)="editInventory(data.id)">{{ data.quantity }}</td>
+        <td (click)="editInventory(data.id)">{{ data.Unit }}</td>
+        <td><button type="button" class="btn btn-outline-primary btn-sm mr-2" data-toggle="modal"
+            (click)="withdrawInventory(data.id)" data-target="#exampleModalCenter">Withdraw</button>
+          <button type="button" class="btn btn-danger btn-sm mr-2" (click)="removeProject(data.id)">Remove
+            Material</button>
+          <button *ngIf="data.quantity == 0" (click)="orderMaterial(data)" type="button"
+            class="btn btn-sm btn-secondary">Order
+            Material</button>
+      </tr>
+    </tbody>
+  </table>
+  <div class="">
+    <a class="btn btn-outline-danger mr-2" routerLink="/add-edit-inventory">Add Inventory</a>
+    <a class="btn btn-danger" routerLink="/home">Go To Home</a>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Withdraw Material</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="addInventoryForm" class="pd-3">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-floating mb-3">
+                <label for="MaterialName" class="text-black-50">Material Name</label>
+                <input id="MaterialName" formControlName="MaterialName" type="text" name="MaterialName" readonly
+                  class="form-control shadow-none border-danger" required autocomplete="name" autofocus
+                  placeholder="...">
+                <div *ngIf="f['MaterialName'].touched && f['MaterialName'].invalid && f['MaterialName'].errors "
+                  class="text-danger">
+                  <small class="text-danger" *ngIf=" f['MaterialName'].errors['required']">Material Name is
+                    required.</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="form-floating mb-3">
+                <label for="email" class="text-black-50">Unit</label>
+                <input id="Unit" formControlName="Unit" type="Unit" name="Unit"
+                  class="form-control shadow-none border-danger" placeholder="..." readonly>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-floating mb-2">
+                <label for="cost" class="text-black-50">Cost</label>
+                <input id="cost" formControlName="cost" type="cost" name="cost"
+                  class="form-control shadow-none border-danger" placeholder="..." readonly>
+                <div *ngIf="f['cost'].touched && f['cost'].invalid && f['cost'].errors " class="text-danger" readonly>
+                  <span *ngIf=" f['cost'].errors['required']">cost is
+                    required.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-8">
+              <div class="form-floating mb-2">
+                <label for="quantity" class="text-black-50">Quantity</label>
+                <input id="quantity" formControlName="quantity" type="quantity" name="quantity"
+                  class="form-control shadow-none border-danger" placeholder="...">
+              </div>
+            </div>
+          </div>
+
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button [disabled]="addInventoryForm.invalid" class="btn btn-outline-danger" data-dismiss="modal" type="submit"
+          name="submit" (click)="submit()"> Withdraw
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

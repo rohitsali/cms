@@ -1,0 +1,70 @@
+<div class="container">
+<h1 class="text-center mt-5">
+  {{ editMode ? "Edit Employee" : "Add New Employee" }}
+</h1>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<section class="container information-processing-form rounded-2">
+  <div class=" mt-4 row d-flex align-items-center">
+
+    <div class="col">
+      <form [formGroup]="addEmployeeForm" (ngSubmit)="submit()" class="pd-3">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-floating mb-3">
+              <label for="empName" class="text-black-50">Employee Name</label>
+              <input id="empName" formControlName="empName" type="text" name="empName"
+                class="form-control shadow-none border-danger" required autocomplete="name" autofocus placeholder="...">
+              <div *ngIf="f['empName'].touched && f['empName'].invalid && f['empName'].errors " class="text-danger">
+                <small class="text-danger" *ngIf=" f['empName'].errors['required']">Employee Name is
+                  required.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-floating mb-3">
+              <label for="workType" class="text-black-50">Work Type</label>
+              <input id="workType" formControlName="workType" type="text" name="workType"
+                class="form-control shadow-none border-danger" placeholder="...">
+              <!-- <div *ngIf="f['workType'].touched && f['workType'].invalid && f['workType'].errors " class="text-danger">
+                    <span *ngIf=" f['workType'].errors['required']">Address of vendor is
+                      required.</span>
+                  </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="form-floating mb-2">
+              <label for="mobile" class="text-black-50">Employee Number</label>
+              <input id="mobile" formControlName="mobile" type="text" name="mobile"
+                class="form-control shadow-none border-danger" placeholder="...">
+              <div *ngIf="f['mobile'].touched && f['mobile'].invalid && f['mobile'].errors " class="text-danger">
+                <span *ngIf=" f['mobile'].errors['required']">Mobile Number is
+                  required.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-floating mb-2">
+              <label for="city" class="text-black-50">Employee city</label>
+              <input id="city" formControlName="city" type="text" name="city"
+                class="form-control shadow-none border-danger" placeholder="...">
+              <div *ngIf="f['city'].touched && f['city'].invalid && f['city'].errors " class="text-danger">
+                <span *ngIf=" f['city'].errors['required']">Mobile Number is
+                  required.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button [disabled]="addEmployeeForm.invalid" class="btn btn-danger w-100 mb-2" type="submit" name="submit">
+          {{ editMode ? "Edit Employee" : "Add New Employee" }}
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+</div>

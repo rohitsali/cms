@@ -1,0 +1,65 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<section class="container information-processing-form rounded-2">
+  <div class="row d-flex align-items-center">
+    <div class="col-sm-6 d-block">
+      <img src="https://raw.githubusercontent.com/TaoThienNhan/Image/main/auth/bg-register.png" alt="banner left form"
+        width="90%" class="rounded-5">
+    </div>
+    <div class="col">
+      <h3 class="mt-3">Sign Up Here!</h3>
+      <form [formGroup]="registerForm" (ngSubmit)="submit()" class="pd-3">
+        <div class="form-floating mb-3">
+          <label for="name" class="text-black-50">User Name <span class="text-danger">*</span></label>
+          <input id="name" formControlName="name" type="email" name="name"
+            class="form-control shadow-none border-danger" required autocomplete="name" autofocus placeholder="Name">
+          <div *ngIf="f['name'].touched && f['name'].invalid && f['name'].errors " class="text-danger">
+            <small class="text-danger" *ngIf=" f['name'].errors['required']">User Name is
+              required.</small>
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <label for="email" class="text-black-50">Email <span class="text-danger">*</span></label>
+          <input id="email" formControlName="email" type="email" name="email"
+            class="form-control shadow-none border-danger" placeholder="Email">
+          <div *ngIf="f['email'].touched && f['email'].invalid && f['email'].errors " class="text-danger">
+            <small class="text-danger" *ngIf=" f['email'].errors['required']">Email is
+              required.</small>
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <label for="phone" class="text-black-50">Phone <span class="text-danger">*</span></label>
+          <input id="phone" type="number" formControlName="phone" name="phone"
+            class="form-control shadow-none border-danger" placeholder="Phone">
+          <div *ngIf="f['phone'].touched && f['phone'].invalid && f['phone'].errors " class="text-danger">
+            <small class="text-danger" *ngIf=" f['phone'].errors['required']">Phone is
+              required.</small>
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <label for="role" class="text-black-50">Role <span class="text-danger">*</span></label>
+          <select id="role" type="text" formControlName="role" name="phone"
+            class="form-control shadow-none border-danger">
+            <option [selected]="selected" value="">Select</option>
+            <option value="1">Builder</option>
+            <option value="2">Contractor</option>
+            <option value="3">User</option>
+          </select>
+        </div>
+        <div class="form-floating mb-3">
+          <label for="password" class="text-black-50">Password <span class="text-danger">*</span></label>
+          <input id="password" formControlName="password" type="text" name="password"
+            class="form-control shadow-none border-danger" placeholder="Password">
+          <div *ngIf="f['password'].touched && f['password'].invalid && f['password'].errors " class="text-danger">
+            <small class="text-danger" *ngIf=" f['password'].errors['required']">Password is
+              required.</small>
+          </div>
+        </div>
+        <button [disabled]="registerForm.invalid" class="btn btn-danger w-100 mb-2" type="submit"
+          name="submit">Register</button>
+        <div class="create-account">
+          <span>You are have account? </span><a href="/login" class="text-decoration-none text-danger">Sign In !</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

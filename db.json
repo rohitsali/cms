@@ -1,0 +1,185 @@
+{
+  "register": [
+    {
+      "name": "sdfsdf",
+      "email": "rohitsali96@gmail.com",
+      "phone": "8485846643",
+      "role": "sfsdf",
+      "password": "sdfsdff",
+      "id": 2
+    },
+    {
+      "name": "Rohit",
+      "email": "rohitsali@gamil.com",
+      "phone": 789489,
+      "role": "2",
+      "password": "asdfsaf",
+      "id": 4
+    },
+    {
+      "name": "Akshay",
+      "email": "akshay@gmail.com",
+      "phone": 1234567897,
+      "role": "1",
+      "password": "1234",
+      "id": 5
+    },
+    {
+      "name": "Sanket",
+      "email": "sanket@gmail.com",
+      "phone": 123456,
+      "role": "3",
+      "password": "1234",
+      "id": 6
+    }
+  ],
+  "projects": [
+    {
+      "ProjectName": "ParkSide",
+      "Address": "Dnyeshwar nagar , pathardi phata ",
+      "City": "Nashik",
+      "Details": "just Looking Like a wow",
+      "startDate": "2023-11-14",
+      "EndDate": "2023-11-30",
+      "ProjectCost": "10CR",
+      "registerId": 1,
+      "id": 1
+    },
+    {
+      "ProjectName": "SaiSankalp",
+      "Address": "Dnyeshwar Nagar",
+      "City": "Nashik",
+      "Details": "Goot to Go",
+      "startDate": "",
+      "EndDate": "",
+      "ProjectCost": "1CR",
+      "registerId": 5,
+      "id": 2
+    },
+    {
+      "ProjectName": "Sai Apartment",
+      "Address": "Nashik",
+      "City": "Nashik",
+      "Details": "",
+      "startDate": "2023-11-01",
+      "EndDate": "2024-10-22",
+      "ProjectCost": "150CR",
+      "registerId": 6,
+      "id": 3
+    }
+  ],
+  "Vendor": [
+    {
+      "VendorName": "Akshay",
+      "Address": "Asdfr",
+      "VendorNumber": "123456",
+      "Email": "asd@gmail.com",
+      "ProjectId": "",
+      "registerId": 5,
+      "id": 1
+    }
+  ],
+  "inventory": [
+    {
+      "MaterialName": "bircks",
+      "Unit": "number",
+      "cost": "10",
+      "quantity": 0,
+      "ProjectId": "",
+      "registerId": 5,
+      "id": 1
+    },
+    {
+      "MaterialName": "Rohit",
+      "Unit": "45",
+      "cost": "789456",
+      "quantity": 0,
+      "ProjectId": "",
+      "registerId": 4,
+      "id": 2
+    }
+  ],
+  "employee": [
+    {
+      "empName": "Akshay",
+      "workType": "Labour",
+      "city": "",
+      "mobile": "123456789",
+      "ProjectId": null,
+      "registerId": 5,
+      "id": 2
+    },
+    {
+      "empName": "sanket",
+      "workType": "electrican",
+      "city": "",
+      "mobile": "9309189676",
+      "ProjectId": null,
+      "registerId": 5,
+      "id": 3
+    },
+    {
+      "empName": "Ramesh S",
+      "workType": "Labour",
+      "city": "",
+      "mobile": "1234567890",
+      "ProjectId": null,
+      "registerId": 6,
+      "id": 4
+    }
+  ],
+  "workforce": [
+    {
+      "empName": "sanket",
+      "payment": 100,
+      "projectName": "SaiSankalp",
+      "ProjectId": "2",
+      "empId": "3",
+      "registerId": 5,
+      "startDate": "2023-11-19",
+      "presentDay": 1,
+      "absentDay": 1,
+      "totalPay": 100,
+      "paid": 100,
+      "Remaining": 0,
+      "id": 6,
+      "remaining": 100,
+      "mark": "2024-02-21"
+    }
+  ],
+  "Client": [],
+  "Task": [
+    {
+      "id": 1,
+      "TaskName": "sanket",
+      "StartDate": 20,
+      "EndDate": "",
+      "NotDate": "",
+      "NotTime": "",
+      "ProjectId": 2
+    },
+    {
+      "TaskName": "Wallcompounding",
+      "StartDate": "2024-02-21",
+      "EndDate": "",
+      "NotDate": "2024-02-29",
+      "NotTime": "",
+      "ProjectId": 2,
+      "id": 2
+    }
+  ],
+  "Resource": [
+    {
+      "id": "a42b",
+      "name": "sdsdsd",
+      "quantity": "sdsds",
+      "taskId": 1
+    },
+    {
+      "id": "06be",
+      "name": "sd",
+      "quantity": "sd",
+      "taskId": 1
+    }
+  ]
+}
